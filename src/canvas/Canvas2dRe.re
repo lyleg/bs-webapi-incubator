@@ -183,3 +183,6 @@ external createImageDataCoords : t => width::float => height::float => ImageRe.t
 external createImageDataFromImage : t => ImageRe.t => ImageRe.t = "createImageData" [@@bs.send];
 external getImageData : t => sx::float => sy::float => sw::float => sh::float => ImageRe.t = "" [@@bs.send];
 external putImageData : t => imageData::ImageRe.t => dx::float => dy::float => dirtyX::float? => dirtyY::float? => dirtyWidth::float? => dirtyHeight::float? => unit => unit = "" [@@bs.send];
+
+/* Image Drawing */
+external drawImage : Dom.element => dx::float => dy::float => dw::float? => dh::float? => unit = "" [@@bs.send.pipe: t];
